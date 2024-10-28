@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Normal Background for the Home Section */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("homepagebg.jpg"); /* Normal background image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Blurred Background for the Get Started Section */
+#get-started::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("homepagebg.jpg"); /* Same image as home */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.nav a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: #007BFF;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    margin-top: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #0ec40e;
+}
+
+.hero p { 
+    font-size: 1.2em;
+    color: #0ec40e;
+    margin-top: 10px;
+}
+
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #f8f8f8;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
